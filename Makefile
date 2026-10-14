@@ -5,7 +5,10 @@
 #   make MODE=debug             debug build   -> build/debug/bin/mqtt_broker
 #   make CROSS_COMPILE=<prefix> override the toolchain prefix
 # -----------------------------------------------------------------------------
-CROSS_COMPILE ?= arm-linux-gnueabihf-sigmastar-11.1.0-
+# Default: build with the host compiler (gcc).
+# To cross-compile, pass the toolchain prefix, e.g.:
+#   make CROSS_COMPILE=arm-linux-gnueabihf-sigmastar-11.1.0-
+# CROSS_COMPILE ?= arm-linux-gnueabihf-sigmastar-11.1.0-
 CC      := $(CROSS_COMPILE)gcc
 STRIP   := $(CROSS_COMPILE)strip
 RM      := rm -rf
