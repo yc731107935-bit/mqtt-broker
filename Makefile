@@ -92,6 +92,7 @@ $(OUT_DIR)/test_message_queue: $(TEST_DIR)/test_message_queue.c $(BROKER_DIR)/me
 # Documentation (Doxygen, HTML output in docs/generated/html)
 # -----------------------------------------------------------------------------
 docs:
+	@mkdir -p docs/generated
 	$(DOXYGEN) Doxyfile
 	@echo "[ok] docs/generated/html/index.html"
 
