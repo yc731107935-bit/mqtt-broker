@@ -59,7 +59,6 @@ void msg_queue_init(MsgQueue *queue)
 void msg_queue_destroy(MsgQueue *queue)
 {
     uint32_t i = 0U;
-    uint32_t idx = 0U;
     MsgNode *node = NULL;
 
     if (queue == NULL)
@@ -69,7 +68,7 @@ void msg_queue_destroy(MsgQueue *queue)
 
     for (i = 0U; i < queue->count; i++)
     {
-        idx = (queue->head + i) % MSG_QUEUE_MAX_SIZE;
+        uint32_t idx = (queue->head + i) % MSG_QUEUE_MAX_SIZE;
         node = queue->node_list[idx];
 
         if (node != NULL)
@@ -209,7 +208,7 @@ int msg_dequeue(MsgQueue *queue, uint8_t *target_id, uint8_t **payload, uint32_t
  * @param[in]   queue Target queue
  * @return      Current message count
  *************************************************************************************************/
-uint32_t msg_queue_count(MsgQueue *queue)
+uint32_t msg_queue_count(const MsgQueue *queue)
 {
     if (queue == NULL)
     {

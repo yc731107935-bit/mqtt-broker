@@ -16,7 +16,7 @@
 void get_log_timestamp(uint8_t *str, size_t len)
 {
     struct timeval tv;
-    struct tm *tmv;
+    const struct tm *tmv;
 
     if (str == NULL || len < 12U)
     {

@@ -795,7 +795,6 @@ static bool mqtt_publish_parse_topic_qos_pktid(const uint8_t *buf,
 {
     int pos = *pos_io;
     uint16_t topic_len = 0;
-    size_t copy = 0;
 
     topic_len = (uint16_t)((buf[pos] << 8) | buf[pos + 1]);
     pos += 2;
@@ -805,7 +804,7 @@ static bool mqtt_publish_parse_topic_qos_pktid(const uint8_t *buf,
     }
     if (wire_topic_out && wire_topic_out_sz > 0U)
     {
-        copy = (size_t)topic_len;
+        size_t copy = (size_t)topic_len;
         if (copy >= wire_topic_out_sz)
         {
             copy = wire_topic_out_sz - 1U;

@@ -308,7 +308,6 @@ int event_loop_del_fd(int fd)
  *************************************************************************************************/
 int event_loop_run(void)
 {
-    int nfds = 0;
     int i = 0;
 
     if (!g_evloop.initialized)
@@ -318,7 +317,7 @@ int event_loop_run(void)
 
     for (;;)
     {
-        nfds = epoll_wait(g_evloop.epoll_fd, g_evloop.events, EVENT_LOOP_MAX_EVENTS, EVENT_LOOP_TIMEOUT_MS);
+        int nfds = epoll_wait(g_evloop.epoll_fd, g_evloop.events, EVENT_LOOP_MAX_EVENTS, EVENT_LOOP_TIMEOUT_MS);
         if (nfds < 0)
         {
             if (errno == EINTR)

@@ -70,6 +70,6 @@ int msg_dequeue(MsgQueue *queue, uint8_t *target_id, uint8_t **payload, uint32_t
  * @param[in]   queue Target queue
  * @return      Current message count
  *************************************************************************************************/
-uint32_t msg_queue_count(MsgQueue *queue);
+uint32_t msg_queue_count(const MsgQueue *queue);
 
 #endif
