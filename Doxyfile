@@ -1,0 +1,38 @@
+# Doxygen configuration for mqtt-broker
+# Generate HTML documentation with: make docs   (or: doxygen Doxyfile)
+
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "mqtt-broker"
+PROJECT_NUMBER         = 1.0.0
+PROJECT_BRIEF          = "Standalone MQTT 3.1.1 broker for embedded Linux"
+OUTPUT_DIRECTORY       = docs/generated
+INPUT                  = src tests README.md
+RECURSIVE              = YES
+FILE_PATTERNS          = *.c *.h *.md
+USE_MDFILE_AS_MAINPAGE = README.md
+
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+EXTRACT_PRIVATE        = NO
+SORT_MEMBER_DOCS       = NO
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+HTML_OUTPUT            = html
+HTML_COLORSTYLE        = LIGHT
+
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = YES
+
+TAB_SIZE               = 4
+JAVADOC_BANNER         = YES

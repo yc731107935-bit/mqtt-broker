@@ -1,0 +1,20 @@
+# clang-format configuration matching the project coding style
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c11
+ColumnLimit: 120
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+BreakBeforeBraces: Allman
+AllowShortIfStatementsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+IndentCaseLabels: false
+AlignConsecutiveMacros: true
+AlignTrailingComments: true
+SpaceBeforeParens: ControlStatements
+PointerAlignment: Right
+SortIncludes: false
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
